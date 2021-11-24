@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+.marker {
+  height: 35px;
+  width: 35px;
+  background-color: red;
+  border-radius: 50%;
+  cursor: pointer !important;
+}
+
+.innerMarker {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.innerMarker {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  z-index: 100;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  z-index: 100;
+
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.overlay-left {
+  left: 0;
+}
+
+.overlay-right {
+  right: 0;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background-color: rgba(177, 177, 177, 0.925);
+  width: min-content;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup {
+  max-width: 400px;
+}
+
+.popup-container {
+  padding: 0.5rem;
+}
+
+.popup-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.popup-image {
+  width: 40px;
+}
