@@ -17,15 +17,11 @@ const CountryPopup = ({ country, onChange }) => {
       >
         <div className="popup-container">
           <div className="popup-header">
-            <h3 className="popup-title">{country.name}</h3>
-            <img className="popup-image" src={country.image} alt="" />
+            <h3 className="popup-title">{country?.place}</h3>
+            <img className="popup-image" src={country?.image} alt="" />
           </div>
-          <p className="popup-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
-            aspernatur debitis. Sunt quia ipsa dignissimos in dolore quas
-            eveniet! Maxime excepturi doloremque deserunt commodi impedit quae
-            perferendis dolorum incidunt optio!
-          </p>
+          <h3 className="popup-subtitle">{country?.title}</h3>
+          <p className="popup-description">{country?.description}</p>
         </div>
       </Popup>
     </div>

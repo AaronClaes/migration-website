@@ -46,17 +46,31 @@ export default function App() {
         minZoom={1}
       >
         {showRegular ? (
-          <CountryMarker
-            onChange={handleCountryChange}
-            country={countries.Belgium}
-          />
-        ) : null}
-        {showRegular ? (
           <div>
+            <CountryMarker
+              onChange={handleCountryChange}
+              country={countries.Belgium}
+            />
             <CountryMarker
               onChange={handleCountryChange}
               country={countries.Mexico}
             />
+            <CountryMarker
+              onChange={handleCountryChange}
+              country={countries.Morocco}
+            />
+            <CountryMarker
+              onChange={handleCountryChange}
+              country={countries.Spain}
+            />
+            <CountryMarker
+              onChange={handleCountryChange}
+              country={countries.Spain2}
+            />
+          </div>
+        ) : null}
+        {showRegular ? (
+          <div>
             {currentCountry && (
               <div>
                 <CountryPopup
@@ -69,11 +83,11 @@ export default function App() {
           </div>
         ) : null}
       </StaticMap>
-      <div className="overlay-text overlay-left">
+      {/* <div className="overlay-text overlay-left">
         <div className="button" onClick={() => toggleRegular(!showRegular)}>
           Switch
         </div>
-      </div>
+      </div> */}
     </Fragment>
   );
 }
