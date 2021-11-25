@@ -54,4 +54,26 @@ export const countries = {
     description:
       "Manifestos read in front of the Immigrant Detention Centre of Zon Franca (Barcelona) after Idrissa Diallo's death because of police refusal of medical care. He was a migrant from Guinea, and was detained at Barcelona for subsequent deportation to Guinea.",
   },
+  Canada: {
+    name: "Canada",
+    place: "Ottawa, Canada",
+    title: "Polish Song.",
+    lat: 47.424721,
+    long: -75.695,
+    image: "/images/Canada.png",
+    sound: "/sounds/Polish Song Ottawa-Canada.wav",
+    description:
+      "May, 5th 2017: Polish migrants singing during the party in Ottawa.",
+  },
+  China: {
+    name: "China",
+    place: "Hong Kong, China",
+    title: "Indonesian maids singing.",
+    lat: 22.302711,
+    long: 114.1694,
+    image: "/images/China.png",
+    sound: "/sounds/Indonesian maids singing, Hong Kong-China.mp3",
+    description:
+      "Every sunday in the streets and parks of Hong Kong scores of maids meet up to enjoy their one day off a week (they are temporary residents of Hong Kong and no matter how long they stay there, they must return home). These migrants mostly live with their chinese employers, who treat them very much like slaves, working long hard days.",
+  },
 };

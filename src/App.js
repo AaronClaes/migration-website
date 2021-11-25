@@ -45,43 +45,47 @@ export default function App() {
         mapboxApiAccessToken={MAPBOX_TOKEN}
         minZoom={1}
       >
-        {showRegular ? (
-          <div>
-            <CountryMarker
-              onChange={handleCountryChange}
-              country={countries.Belgium}
-            />
-            <CountryMarker
-              onChange={handleCountryChange}
-              country={countries.Mexico}
-            />
-            <CountryMarker
-              onChange={handleCountryChange}
-              country={countries.Morocco}
-            />
-            <CountryMarker
-              onChange={handleCountryChange}
-              country={countries.Spain}
-            />
-            <CountryMarker
-              onChange={handleCountryChange}
-              country={countries.Spain2}
-            />
-          </div>
-        ) : null}
-        {showRegular ? (
-          <div>
-            {currentCountry && (
-              <div>
-                <CountryPopup
-                  country={currentCountry}
-                  onChange={handleCountryChange}
-                />
-                <audio autoPlay src={currentCountry?.sound}></audio>
-              </div>
-            )}
-          </div>
-        ) : null}
+        <div>
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Belgium}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Mexico}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Morocco}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Spain}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Spain2}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Canada}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.China}
+          />
+        </div>
+        <div>
+          {currentCountry && (
+            <div>
+              <CountryPopup
+                country={currentCountry}
+                onChange={handleCountryChange}
+              />
+              <audio autoPlay src={currentCountry?.sound}></audio>
+            </div>
+          )}
+        </div>
       </StaticMap>
       {/* <div className="overlay-text overlay-left">
         <div className="button" onClick={() => toggleRegular(!showRegular)}>
