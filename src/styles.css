@@ -35,30 +35,59 @@
   background-size: cover;
 }
 
-.overlay-text {
+.startScreen {
   position: absolute;
+  background-color: rgba(179, 179, 179, 0.781);
+  width: 100%;
+  height: 100%;
   z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 10rem;
+  backdrop-filter: blur(5px);
+}
 
+.magic {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-size: 100% 100%;
+  border-radius: 50%;
+}
+
+.box {
+  background-color: rgb(218, 218, 218);
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  color: rgb(31, 31, 31);
+}
+
+.startScreen-title {
+  font-size: 2.5rem;
   margin: 1rem;
-  padding: 0.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.overlay-left {
-  left: 0;
-}
-
-.overlay-right {
-  right: 0;
 }
 
 .button {
-  padding: 0.5rem 1rem;
-  background-color: rgba(177, 177, 177, 0.925);
+  padding: 0.75rem 3rem;
+  background-color: rgb(57, 90, 236);
   width: min-content;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  margin-top: 2rem;
+  color: white;
+  border: 3px solid rgb(57, 90, 236);
+}
+
+.button:hover {
+  background-color: white;
+  color: rgb(57, 90, 236);
 }
 
 .popup {

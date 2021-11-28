@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import { StaticMap } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "mapbox-gl-compare/dist/mapbox-gl-compare.css";
@@ -6,6 +6,8 @@ import "./styles.css";
 import CountryMarker from "./components/CountryMarker";
 import CountryPopup from "./components/CountryPopup";
 import { countries } from "./data";
+
+import background from "./images/map.PNG";
 
 const MAPBOX_TOKEN =
   "pk.eyJ1IjoiYWFyb25jbGFlcyIsImEiOiJja3BqcmwyNnowMzNsMnFzMzVqYTRsNnp1In0.UeILTAYn1LCdlg09E2HByw";
@@ -17,6 +19,11 @@ export default function App() {
     currentCountry?.name === country
       ? setCurrentCountry(null)
       : setCurrentCountry(countries[country]);
+  };
+
+  const handleStart = () => {
+    let scene = document.querySelector(".startScreen");
+    scene.style.display = "none";
   };
 
   const [viewport] = useState({
@@ -34,6 +41,30 @@ export default function App() {
     left: 0,
   };
 
+  useEffect(() => {
+    let magic = document.querySelector(".magic");
+    let scene = document.querySelector(".startScreen");
+    let magicWHalf = magic.offsetWidth / 2;
+    scene.addEventListener("mousemove", function (e) {
+      let x = e.pageX - this.offsetLeft;
+      let y = e.pageY - this.offsetTop;
+      console.log(x, y);
+      magic.style.left = `${x - magicWHalf}px`;
+      magic.style.top = `${y - magicWHalf}px`;
+      console.log(magic.style.left);
+    });
+    return () => {
+      scene.removeEventListener("mousemove", function (e) {
+        let x = e.pageX - this.offsetLeft;
+        let y = e.pageY - this.offsetTop;
+        console.log(x, y);
+        magic.style.left = `${x - magicWHalf}px`;
+        magic.style.top = `${y - magicWHalf}px`;
+        console.log(magic.style.left);
+      });
+    };
+  }, []);
+
   return (
     <Fragment>
       <StaticMap
@@ -44,6 +75,7 @@ export default function App() {
         mapStyle="mapbox://styles/mapbox/satellite-streets-v11"
         mapboxApiAccessToken={MAPBOX_TOKEN}
         minZoom={1}
+        className="map"
       >
         <div>
           <CountryMarker
@@ -87,11 +119,21 @@ export default function App() {
           )}
         </div>
       </StaticMap>
-      {/* <div className="overlay-text overlay-left">
-        <div className="button" onClick={() => toggleRegular(!showRegular)}>
-          Switch
+      <div className="startScreen">
+        <div
+          className="magic"
+          style={{
+            background: `url(${background}) 50% 50% no-repeat fixed`,
+          }}
+        ></div>
+        <div className="box">
+          <h1 className="startScreen-title">Migration in our world</h1>
+          <h2>Experience it through music, protests and sounds</h2>
+          <div className="button" onClick={handleStart}>
+            <h3>Start</h3>
+          </div>
         </div>
-      </div> */}
+      </div>
     </Fragment>
   );
 }

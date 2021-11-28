@@ -8,7 +8,7 @@ export const countries = {
     image: "/images/Belgium.png",
     sound: "/sounds/Migrant protest, Brussels-Belgium.wav",
     description:
-      "A group of arabs of north-african origin, chanting during the global protest of 15 October 2011, at the Brussels march.",
+      "A group of arabs of north-african origin, chanting during the global protest of 15 October 2011, at the Brussels march. The global protests were part of a series of protests inspired by events like the Arab Spring, the Icelandic protests and the Occupy movement. The protests were launched under the slogan 'United for #GlobalChange'.",
   },
   Mexico: {
     name: "Mexico",
@@ -63,10 +63,21 @@ export const countries = {
     image: "/images/Canada.png",
     sound: "/sounds/Polish Song Ottawa-Canada.wav",
     description:
-      "May, 5th 2017: Polish migrants singing during the party in Ottawa.",
+      "May, 5th 2017: Polish migrants singing during the party in Ottawa. The consecutive waves of Polish immigrants in periods from 1890–1914, 1920–1939, and 1941 to this day, settled across Canada from Cape Breton to Vancouver, and made numerous and significant contributions to the agricultural, manufacturing, engineering, teaching, publishing, religious, mining, cultural, professional, sports, military, research, business, governmental and political life in Canada.",
   },
   China: {
     name: "China",
+    place: "Hong Kong, China",
+    title: "Indonesian maids singing.",
+    lat: 22.302711,
+    long: 114.1694,
+    image: "/images/China.png",
+    sound: "/sounds/Indonesian maids singing, Hong Kong-China.mp3",
+    description:
+      "Every sunday in the streets and parks of Hong Kong scores of maids meet up to enjoy their one day off a week (they are temporary residents of Hong Kong and no matter how long they stay there, they must return home). These migrants mostly live with their chinese employers, who treat them very much like slaves, working long hard days.",
+  },
+  Scotland: {
+    name: "Scotland",
     place: "Hong Kong, China",
     title: "Indonesian maids singing.",
     lat: 22.302711,
