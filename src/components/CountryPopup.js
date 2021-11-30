@@ -9,7 +9,7 @@ const CountryPopup = ({ country, onChange }) => {
         latitude={country?.lat}
         longitude={country?.long}
         offsetLeft={17}
-        offsetTop={-24}
+        offsetTop={0}
         closeButton={true}
         closeOnClick={false}
         onClose={() => onChange(country.name)}

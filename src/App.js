@@ -1,13 +1,21 @@
 import React, { useState, Fragment, useEffect } from "react";
 import { StaticMap } from "react-map-gl";
+import ReactMapGL from "react-map-gl";
+
 import "mapbox-gl/dist/mapbox-gl.css";
 import "mapbox-gl-compare/dist/mapbox-gl-compare.css";
 import "./styles.css";
 import CountryMarker from "./components/CountryMarker";
 import CountryPopup from "./components/CountryPopup";
 import { countries } from "./data";
-
 import background from "./images/map.PNG";
+
+import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
+
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker"; // Load worker code separately with worker-loader
+
+mapboxgl.workerClass = MapboxWorker; // Wire up loaded worker to be used instead of the default
 
 const MAPBOX_TOKEN =
   "pk.eyJ1IjoiYWFyb25jbGFlcyIsImEiOiJja3BqcmwyNnowMzNsMnFzMzVqYTRsNnp1In0.UeILTAYn1LCdlg09E2HByw";
@@ -48,7 +56,6 @@ export default function App() {
     scene.addEventListener("mousemove", function (e) {
       let x = e.pageX - this.offsetLeft;
       let y = e.pageY - this.offsetTop;
-      console.log(x, y);
       magic.style.left = `${x - magicWHalf}px`;
       magic.style.top = `${y - magicWHalf}px`;
       console.log(magic.style.left);
@@ -105,6 +112,42 @@ export default function App() {
           <CountryMarker
             onChange={handleCountryChange}
             country={countries.China}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Poland}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Scotland}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Jordan}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Afghanistan}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Libya}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Cameroon}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Colombia}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.Syria}
+          />
+          <CountryMarker
+            onChange={handleCountryChange}
+            country={countries.France}
           />
         </div>
         <div>
